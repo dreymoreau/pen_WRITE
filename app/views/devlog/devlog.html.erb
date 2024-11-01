@@ -12,3 +12,11 @@
         <li>added my own dev_log controller,,model and view!!!</li>
         <li>lots of looking at docs instead of going straight to gpt</li>
     </ul>
+
+<ul> 
+    <% @log.each do |logs|%>
+        <li>
+            <%= logs %>
+        </li>
+    <% end %>
+</ul>
