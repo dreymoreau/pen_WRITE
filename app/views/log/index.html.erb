@@ -1,7 +1,7 @@
 <h2> October 30th, 2024 <h2>
     <ul>
-        <li>added articles_control controller<li>
         <li>read a lot through the ruby docs as well as google searching</li>
+        <li>added articles_control controller</li>
         <li>lots of time for hands on the keyboard!! looking at different code</li>
     </ul>
 
@@ -13,10 +13,20 @@
         <li>lots of looking at docs instead of going straight to gpt</li>
     </ul>
 
+    
+<h2> November 2nd, 2024 <h2>
+    <ul>
+        <li>realized why the LogController wasnt being read because I didnt generate it using command line and rather add new file</li>
+        <li>updated log view and realized why that wasnt being rendered aka this file,, because the connection was off,, index title of file inside log folder</li>
+        <li>reading more about ActiveRecord!!!!</li>
+    </ul>
+
+<%# this is rendering all the objects in the database which could be a cool future plan to crud it practice %>
 <ul> 
     <% @log.each do |logs|%>
         <li>
-            <%= logs %>
+            <%= logs.title %>
+            <%= logs.body %>
         </li>
     <% end %>
 </ul>
