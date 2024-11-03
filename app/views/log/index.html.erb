@@ -24,9 +24,7 @@
 <%# this is rendering all the objects in the database which could be a cool future plan to crud it practice %>
 <ul> 
     <% @log.each do |logs|%>
-        <li>
-            <%= logs.date %>
-            <%= logs.body %>
-        </li>
+     <h2><%= logs.date %> </h2>
+     <li><%= logs.body %></li>
     <% end %>
 </ul>
