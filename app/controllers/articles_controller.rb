@@ -8,4 +8,9 @@ class ArticlesController < ApplicationController
     # also!! Article.all is the method you used in the console to query everything from the database
     @articles = Article.all
   end
+
+  # note this will connect with the route being declared in the config/routes!! the action that is being used there then will be declared here with its purpose!!! with the id captured as the route parameter,, by default the show action will render app/views/articles/show.html.erb.
+  def show
+    @article = Article.find(params[:id])
+  end
 end

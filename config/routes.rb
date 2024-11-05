@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   root "articles#index"
 
   get "/articles", to: "articles#index"
+  # will only show one article with the route parameter :id at a time rather than all with the index action
+  get "/articles/:id", to: "articles#show"
+
   get "/log", to: "log#index", as: "log"
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
   # Can be used by load balancers and uptime monitors to verify that the app is live.
