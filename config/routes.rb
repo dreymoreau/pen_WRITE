@@ -4,9 +4,12 @@ Rails.application.routes.draw do
   # the root route is also mapped to the index action of ArticlesController.
   root "articles#index"
 
-  get "/articles", to: "articles#index"
+  resources :articles
+  # root "articles#index"
+
+  # get "/articles", to: "articles#index"
   # will only show one article with the route parameter :id at a time rather than all with the index action
-  get "/articles/:id", to: "articles#show"
+  # get "/articles/:id", to: "articles#show"
 
   get "/log", to: "log#index", as: "log"
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
