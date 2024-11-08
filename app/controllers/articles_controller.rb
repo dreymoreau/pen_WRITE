@@ -19,12 +19,19 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    @article = Article.new(title: "...", body: "...")
+    @article = Article.new(article_params)
 
     if @article.save
       redirect_to @article
     else
+      # the new action instantiates a new article but does not save it
       render :new, status, :unprocessable_entity
     end
   end
+
+  # this is privately declared and then used as the parameters when a new article is created,, rather than before we had hard coded in title and body in the create method
+  private
+    def article_params
+      params.expect(article: [ :title, :body ])
+    end
 end
