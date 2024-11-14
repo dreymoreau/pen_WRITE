@@ -1,18 +1,17 @@
-<h1>New Article </h1>
+<h1>New Article</h1>
 
-<%= form_with model: @article do |form|%>
+<%= form_with model: @article do |form| %>
   <div>
     <%= form.label :title %><br>
-    <%= form.text_field :title%>
-    <%# full_messages_for method returns an array of user-friendly error messages for a specified attribute %>
+    <%= form.text_field :title %>
     <% @article.errors.full_messages_for(:title).each do |message| %>
       <div><%= message %></div>
-      <% end %>
+    <% end %>
   </div>
 
-    <div>
+  <div>
     <%= form.label :body %><br>
-    <%= form.text_area :body %><br>
+    <%= form.textarea :body %><br>
     <% @article.errors.full_messages_for(:body).each do |message| %>
       <div><%= message %></div>
     <% end %>
@@ -22,3 +21,4 @@
     <%= form.submit %>
   </div>
 <% end %>
+    <%# full_messages_for method returns an array of user-friendly error messages for a specified attribute %>

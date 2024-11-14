@@ -32,6 +32,6 @@ class ArticlesController < ApplicationController
   # this is privately declared and then used as the parameters when a new article is created,, rather than before we had hard coded in title and body in the create method
   private
     def article_params
-      params.expect(article: [ :title, :body ])
+      params.require(:article).permit(:title, :body)
     end
 end
